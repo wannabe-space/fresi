@@ -4,7 +4,9 @@ Glad to see you here!
 
 ## Introduction
 
-This repository needed only for issues due to Fresi is not open source.
+> This repository needed only for issues due to Fresi is not open source.
+
+If you want to create a bug or enhancement, please create a new [issue here](https://github.com/wannabe-space/fresi/issues).
 
 ## Tech Stack
 
@@ -16,6 +18,3 @@ This repository needed only for issues due to Fresi is not open source.
 - [Stripe](https://stripe.com/) – payments
 - [Vercel](https://vercel.com/) – deployments
 
-## Contributing
-
-If you want to create a bug or enhancement, please create an [issue](https://github.com/wannabe-space/fresi/issues).
