@@ -10,7 +10,7 @@ If you want to create a bug or enhancement, please create a new [issue here](htt
 
 ## Tech Stack
 
-- [Next.js 15](https://nextjs.org/) – framework
+- [Next.js](https://nextjs.org/) – framework
 - [Motion](https://motion.dev/) – animations
 - [Shiki](https://shiki.style) - code highlighter
 - [TailwindCSS](https://tailwindcss.com/) – CSS
