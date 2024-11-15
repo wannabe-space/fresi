@@ -10,11 +10,13 @@ If you want to create a bug or enhancement, please create a new [issue here](htt
 
 ## Tech Stack
 
-- [Next.js](https://nextjs.org/) – framework
-- [TypeScript](https://www.typescriptlang.org/) – language
-- [Tailwind](https://tailwindcss.com/) – CSS
+- [Next.js 15](https://nextjs.org/) – framework
+- [Motion](https://motion.dev/) – animations
+- [Shiki](https://shiki.style) - code highlighter
+- [TailwindCSS](https://tailwindcss.com/) – CSS
 - [Supabase](https://supabase.com/) – database
-- [Clerk](https://clerk.com/) – auth
+- [Drizzle ORM](https://orm.drizzle.team/) – orm
+- [Clerk](https://clerk.com/) – auth and user management
 - [Stripe](https://stripe.com/) – payments
 - [Vercel](https://vercel.com/) – deployments
 
