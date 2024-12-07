@@ -1,0 +1,20 @@
+@use "sass:math";
+
+$transition-duration: 0.5s;
+
+.bg {
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width $transition-duration,
+    transform math.div($transition-duration, 2),
+    left math.div($transition-duration, 2), opacity $transition-duration,
+    background-color $transition-duration;
+
+  &.scrolled {
+    left: 0;
+    transform: translateX(0);
+    transition: width $transition-duration,
+      transform math.div($transition-duration, 2), left $transition-duration,
+      opacity $transition-duration, background-color $transition-duration;
+  }
+}

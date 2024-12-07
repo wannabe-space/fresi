@@ -1,0 +1,1 @@
+ALTER TYPE "public"."resource" ADD VALUE 'mdn' BEFORE 'react';

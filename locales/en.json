@@ -1,0 +1,212 @@
+{
+  "seo": {
+    "title": "Fresi - JavaScript-First Developer Assistant Powered by AI",
+    "description": "AI assistant that can search for information directly in the documentations of modern JavaScript libraries and frameworks, such as React, Vue, TailwindCSS, Prisma, and more."
+  },
+  "app": {
+    "old-browser": {
+      "title": "Your browser is too old",
+      "description": "For Fresi to work correctly, please update your browser to the latest version."
+    },
+    "cookie": "We use cookies to ensure that Fresi works correctly. By continuing to use the site, you agree to the use of cookies.",
+    "subscription-success": "Subscription successful, enjoy!",
+    "improvements-notice": "If you have any ideas for improving the service, or found a bug, please create an issue <a>on GitHub</a>.",
+    "subscription-required": "To use this feature, you need a subscription"
+  },
+  "alerts": {
+    "note": "Note",
+    "tip": "Tip",
+    "important": "Important",
+    "warning": "Warning",
+    "caution": "Caution",
+    "legacy": "Legacy"
+  },
+  "labels": {
+    "email": "Email",
+    "send": "Send",
+    "error": "Error",
+    "accept": "Accept",
+    "ok": "OK",
+    "about": "About",
+    "month": "Month",
+    "select": "Select",
+    "search": "Search",
+    "soon": "Soon",
+    "home": "Home",
+    "chat": "Chat",
+    "no-items-found": "No items found",
+    "confirmation": "Confirmation",
+    "confirm": "Confirm",
+    "success": "Success",
+    "cancel": "Cancel",
+    "remove": "Remove",
+    "link": "Link",
+    "copy": "Copy",
+    "copy-link": "Copy link",
+    "match": "Match",
+    "go-to": "Go to",
+    "open": "Open",
+    "copied": "Copied to clipboard",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "loading": "Loading",
+    "this-week": "This week",
+    "this-month": "This month",
+    "this-year": "This year",
+    "temporary-unavailable": "Temporarily unavailable"
+  },
+  "features": {
+    "auth": {
+      "sign-in": "Sign In",
+      "sign-up": "Sign Up"
+    },
+    "subscriptions": {
+      "title": "Subscription",
+      "subscribe": "Try for free",
+      "subscription-exists": "Subscribed",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "per-request": "Per request",
+      "manage-subscription": "Manage subscription",
+      "pro": {
+        "description": "Search information without limits",
+        "features": [
+          "7 days free trial",
+          "Chats history",
+          "Unlimited number of queries",
+          "Ability to share chats",
+          "Access to all documentations",
+          "More to come soon..."
+        ]
+      }
+    },
+    "footer": {
+      "privacy-policy": "Privacy Policy",
+      "refund-policy": "Refund Policy",
+      "terms-conditions": "Terms & Conditions"
+    }
+  },
+  "navbar": {
+    "home": "Home",
+    "how-it-works": "How it works",
+    "available": "Documentations",
+    "features": "Features",
+    "pricing": "Pricing",
+    "chat": "Chat",
+    "sign-up": "Sign Up"
+  },
+  "views": {
+    "home": {
+      "hero": {
+        "title": "Developer Assistant Powered by AI",
+        "description": "Just ask Fresi instead of spending days reading documentations or using other AIs with outdated information"
+      },
+      "how-it-works": {
+        "title": "How it works?",
+        "description": "Fresi has a unique system that provides you with fresh and relevant information",
+        "update": {
+          "title": "Update",
+          "description": "Tech <b>documentations</b> are updated <b>daily</b> to maintain the most <b>up-to-date</b> information for you to search"
+        },
+        "ai": {
+          "title": "AI Models",
+          "description": "Each question is processed by multiple <b>AI models</b> simultaneously to provide the <b>most relevant</b> answers for you"
+        },
+        "chat": {
+          "title": "Chat",
+          "description": "<b>Developer-friendly</b> chat built with the <b>latest technologies</b> makes your communication with Fresi as <b>efficient</b> as possible"
+        }
+      },
+      "features": {
+        "title": "What will you get?",
+        "description": "If you are a developer, you can <span>get rid</span> of other AI chats",
+        "docs-search": {
+          "title": "Search",
+          "description": "Fresi is looking for the information <b>directly</b> in the <b>official documentations</b> to provide answers to your questions"
+        },
+        "sources": {
+          "title": "Sources",
+          "description": "Fresi does its best to find and add <b>direct links</b> to official sources to ensure information <b>accuracy</b> for each answer"
+        },
+        "chat": {
+          "title": "Chat",
+          "description": "Chat allows you to get answers with <b>maximum accuracy</b> to any question, even <b>non-programming</b>"
+        },
+        "ai-models": {
+          "title": "AI Models",
+          "description": "Fresi uses several <b>AI models</b> from the <b>leading</b> companies to provide the best answers to your queries"
+        },
+        "js-interface": {
+          "title": "Interface",
+          "description": "Chat was developed using <b>modern technologies</b> to cover developers <b>specific</b> needs and purposes"
+        },
+        "advantage": {
+          "title": "Advantage",
+          "description": "<b>Best</b> JavaScript AI Assistant for solving <b>everyday tasks</b> created by developers for <b>developers</b>"
+        }
+      },
+      "companies": {
+        "title": "Models",
+        "description": "Fresi uses the latest AI models from the most popular providers"
+      },
+      "available": {
+        "libraries": "Available documentations",
+        "but-anything": "But you can ask anything! Fresi can easily chat with you on any topic"
+      },
+      "not-only": {
+        "title": "Not only JavaScript",
+        "description": "Fresi can also provide answers to non-programming questions using the latest AI models",
+        "open-chat": "Open this chat"
+      },
+      "pricing": {
+        "title": "Pricing",
+        "description": "Subscribe and accelerate information searches for routine questions and tasks"
+      }
+    },
+    "auth": {
+      "home": "Back to home",
+      "banner": "Start getting real answers to your questions"
+    },
+    "chat": {
+      "new-chat": "New chat",
+      "chats-history": "Chats history",
+      "ask": "Question for Fresi",
+      "title": "What will we search?",
+      "searching": "Thinking about an answer",
+      "shared-with-you": "Shared with you",
+      "sources": "Sources",
+      "sign-in": "To use chat, please <a>sign in</a> to your account.",
+      "error": "Oops, something went wrong. If the error persists, please rephrase your question.",
+      "try-again": "Try again",
+      "share": "Share",
+      "public": "Chat visible to others?",
+      "generate-confirm": "Are you sure you want to generate a new version of this message?",
+      "resource-placeholder": "Something specific?",
+      "generate-again": "Generate again",
+      "available-docs": "Available documentations",
+      "but-anything": "But you can ask anything! Fresi can easily chat with you on any topic",
+      "mistake": "Fresi still can make mistakes even with our data.",
+      "chat-not-found": "Chat not found",
+      "empty-history": "Chats history is empty",
+      "remove-chat-confirm": "Are you sure you want to delete this chat?",
+      "to-view-history-subscription-required": "To view the chat history, please subscribe"
+    }
+  },
+  "validations": {
+    "required": "This field is required",
+    "email": "The field must be a valid email address",
+    "url": "The field must be a valid URL address",
+    "invalid-number": "The field must be a valid number",
+    "too-small": "The field must contain at least {count} characters | The field must contain at least {count} character | The field must contain at least {count} characters | The field must contain at least {count} characters",
+    "too-big": "The field must contain at most {count} characters | The field must contain at most {count} characters | The field must contain at most {count} characters | The field must contain at most {count} characters",
+    "min": "The value must be at least {count}",
+    "max": "The value must be at most {count}",
+    "only-letters-number-minus": "The field can only contain lowercase letters, numbers, and hyphens"
+  },
+  "errors": {
+    "not-found": "We couldn't find what you were looking for",
+    "cannot-connect-server": "Cannot connect to server.",
+    "internal-error": "Oops, something went wrong. We're already working on it.",
+    "auth-error": "Authentication error. Sorry, we're fixing it right now!"
+  }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE "docs" DROP COLUMN IF EXISTS "slug";

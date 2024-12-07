@@ -1,0 +1,41 @@
+@use './_github-alerts.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply max-w-[1600px];
+}
+
+.prose {
+  max-width: unset;
+
+  table tr,
+  table thead {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  table td {
+    line-height: 1.4;
+  }
+
+  .dark & {
+    table tr,
+    table thead {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}

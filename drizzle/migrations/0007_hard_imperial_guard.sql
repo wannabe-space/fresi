@@ -1,0 +1,1 @@
+ALTER TABLE "chats_messages" ALTER COLUMN "doc_types" SET DEFAULT '{}';

@@ -1,0 +1,20 @@
+diff --git a/dist/lib/server-external-packages.json b/dist/lib/server-external-packages.json
+index fc92b0a70fce4fd928ace9d73aac053114f8226a..e78dfde0d7b114011928419c8f307b82bceaa62f 100644
+--- a/dist/lib/server-external-packages.json
++++ b/dist/lib/server-external-packages.json
+@@ -27,7 +27,6 @@
+   "eslint",
+   "express",
+   "firebase-admin",
+-  "import-in-the-middle",
+   "isolated-vm",
+   "jest",
+   "jsdom",
+@@ -51,7 +50,6 @@
+   "prisma",
+   "puppeteer",
+   "puppeteer-core",
+-  "require-in-the-middle",
+   "rimraf",
+   "sharp",
+   "shiki",

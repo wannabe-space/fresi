@@ -1,0 +1,12 @@
+.sidebar-footer {
+  .cl-userButtonTrigger {
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 20rem;
+
+      @apply lg:hidden absolute inset-y-0 left-0;
+    }
+  }
+}
