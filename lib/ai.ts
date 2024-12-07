@@ -9,7 +9,6 @@ export const models = {
   embedding: openai.embedding('text-embedding-3-small'),
   answer: {
     // for docs we should use AI with huge context window due to the size of the docs
-    // docs: google('gemini-1.5-pro-latest'),
     docs: anthropic('claude-3-5-sonnet-latest'),
     // noDocs: xai('grok-beta'),
     noDocs: anthropic('claude-3-5-sonnet-latest'),
