@@ -1,5 +1,6 @@
 'use client'
 
+import type { ReactElement } from 'react'
 import type { RouterOutputs } from '~/trpc/routers'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import { RiDeleteBinFill, RiLoader4Fill, RiMoreFill } from '@remixicon/react'
@@ -91,7 +92,7 @@ function Label({ children }: { children: React.ReactNode }) {
   return <div className="mx-3 mb-1 mt-4 block text-sm opacity-50 group-first:mt-0">{children}</div>
 }
 
-export function SidebarHistory() {
+export function SidebarHistory(): ReactElement {
   const queryClient = useQueryClient()
   const { id } = useParams<{ id: string }>()
   const { isTouch } = useAppContext()

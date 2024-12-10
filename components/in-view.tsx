@@ -9,7 +9,7 @@ interface InViewProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function InView({ children, onVisible, onHidden, threshold = 1, rootMargin = '0px', ...props }: InViewProps) {
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null!)
   const intersection = useIntersection(ref, {
     root: null,
     rootMargin,

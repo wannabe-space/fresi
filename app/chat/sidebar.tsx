@@ -1,5 +1,6 @@
 'use client'
 
+import type { ReactElement } from 'react'
 import { RiAddLine, RiCloseLine, RiHistoryLine, RiMenu2Fill } from '@remixicon/react'
 import { useQueryClient } from '@tanstack/react-query'
 import { useTranslations } from 'next-intl'
@@ -122,7 +123,7 @@ function SidebarPanel({ className }: { className?: string }) {
   }
 
   const [title, setTitle] = useState(tabs[DEFAULT_TAB].label)
-  const Component = useRef<() => JSX.Element>(tabs[DEFAULT_TAB].component)
+  const Component = useRef<() => ReactElement>(tabs[DEFAULT_TAB].component)
 
   useEffect(() => {
     if (activeTab) {

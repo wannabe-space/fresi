@@ -1,5 +1,6 @@
 'use client'
 
+import type { ReactElement, ReactNode } from 'react'
 import type { IOptions } from 'rehype-github-alerts'
 import { RiFileCopyLine } from '@remixicon/react'
 import { useTranslations } from 'next-intl'
@@ -12,13 +13,13 @@ import { cn } from '~/lib/ui'
 import { CodeHighlight } from './code-highlight'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip'
 
-function Pre(props: { children?: React.ReactNode }) {
+function Pre(props: { children?: ReactNode }) {
   const t = useTranslations('labels')
   const [rendered, setRendered] = useState(false)
   const { copyToClipboard } = useCopy()
 
-  const childrenProps = (typeof props.children === 'object' && (props.children as React.ReactElement)?.props) || null
-  const content = (childrenProps?.children as string)?.trim() || null
+  const childrenProps = (typeof props.children === 'object' && (props.children as ReactElement<{ children?: ReactNode, className?: string }>)?.props) || null
+  const content = childrenProps?.children?.toString().trim() || null
   const lang = childrenProps?.className?.split('-')[1] || 'text'
 
   return (

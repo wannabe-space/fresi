@@ -33,7 +33,7 @@ export function ChatHeader({ isShared, chat, className, ...props }: ChatHeaderPr
       className={cn('flex sticky top-0 h-16 z-10 pt-2 items-center justify-between gap-2 lg:gap-6 before:bg-gradient-to-b before:from-zinc-50 dark:before:from-zinc-950 before:to-transparent before:absolute before:inset-x-0 before:-z-10 before:h-28 before:pointer-events-none before:top-0', className)}
       {...props}
     >
-      <div className="flex flex-1 items-center gap-2 max-w-[calc(100%-5rem)] lg:max-w-[calc(100%-10rem)] lg:gap-4">
+      <div className="flex max-w-[calc(100%-5rem)] flex-1 items-center gap-2 lg:max-w-[calc(100%-10rem)] lg:gap-4">
         <SidebarTrigger className="-ml-2 shrink-0" />
         {resources.map(resource => (
           <DocIcon key={resource} name={resource} />

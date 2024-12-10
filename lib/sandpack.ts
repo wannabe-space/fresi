@@ -1,6 +1,6 @@
-import type { SandpackTheme } from '@codesandbox/sandpack-react'
+// import type { SandpackTheme } from '@codesandbox/sandpack-react'
 
-export const githubDark: SandpackTheme = {
+export const githubDark = {
   colors: {
     surface1: '#18181b',
     surface2: '#161b22',

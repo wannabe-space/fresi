@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Fresi - JavaScript-First Developer Assistant Powered by AI",
-    "description": "AI assistant that can search for information directly in the documentations of modern JavaScript libraries and frameworks, such as React, Vue, TailwindCSS, Prisma, and more."
+    "description": "AI-powered open source developer assistant for searching up-to-date information directly in modern documentations."
   },
   "app": {
     "old-browser": {
