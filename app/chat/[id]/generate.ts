@@ -190,7 +190,7 @@ async function findDocs({ question, messages, docType }: { question: string, mes
       })
       .from(docs)
       .where(inArray(docs.path, paths))
-      .limit(50)
+      .limit(40)
       .orderBy(t => desc(t.similarity)),
   }
 }
