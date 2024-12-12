@@ -19,7 +19,8 @@ export function DocIcon({ name, className, width = 20, height = 20, ...props }: 
       width={width}
       height={height}
       className={cn('size-4', [
-        ['prisma', 'better-auth', 'aisdk'].includes(name) && 'invert dark:invert-0',
+        ['prisma', 'better-auth'].includes(name) && 'invert dark:invert-0',
+        ['aisdk'].includes(name) && 'invert-0 dark:invert',
         className,
       ])}
       {...props}
