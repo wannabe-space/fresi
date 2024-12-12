@@ -5,7 +5,6 @@ export const tanstackRouter: Resource = {
   type: 'tanstack-router',
   label: 'TanStack Router',
   icon: '/resources/tanstack.svg',
-  category: 'frontend',
   site: 'https://tanstack.com',
   git: 'https://github.com/TanStack/router.git',
   docsPath: 'docs',

@@ -5,7 +5,6 @@ export const vue: Resource = {
   type: 'vue',
   label: 'Vue',
   icon: '/resources/vue.svg',
-  category: 'frontend',
   site: 'https://vuejs.org',
   git: 'https://github.com/vuejs/docs.git',
   docsPath: 'src',
