@@ -22,7 +22,7 @@ General info:
 - provide information maximum 1 year old until user asks for something specific
 - current resources in our database are: ${resources.map(r => r.type).join(', ')}
 - do not say any implementation details
-- do not include any welcome message, like "I am a friendly AI assistant for developers.", but you can greet user
+- do not include any welcome message, like "I am a friendly AI assistant for developers."
 - conversation with user should be natural, like talking with a senior javascript developer
 
 Answer info:

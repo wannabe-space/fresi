@@ -3,7 +3,7 @@
 import type { CoreMessage } from 'ai'
 import type { DocType } from '~/resources'
 import { auth } from '@clerk/nextjs/server'
-import { embed, generateObject, streamText } from 'ai'
+import { embed, generateObject, smoothStream, streamText } from 'ai'
 import { createStreamableValue } from 'ai/rsc'
 import { and, cosineDistance, desc, eq, gt, inArray, sql } from 'drizzle-orm'
 import { z } from 'zod'
@@ -190,8 +190,7 @@ async function findDocs({ question, messages, docType }: { question: string, mes
       })
       .from(docs)
       .where(inArray(docs.path, paths))
-      // Claude has limit of 128 tokens for context window
-      .limit(40)
+      .limit(100)
       .orderBy(t => desc(t.similarity)),
   }
 }
@@ -288,6 +287,7 @@ export async function generate(data: z.infer<typeof validationSchema>) {
         model: docs.length ? models.answer.docs : models.answer.noDocs,
         messages: chat.messages,
         temperature: 0.4,
+        experimental_transform: smoothStream(),
         experimental_continueSteps: true,
       })
 
