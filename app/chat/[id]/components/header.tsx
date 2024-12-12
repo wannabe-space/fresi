@@ -2,7 +2,6 @@ import type { HTMLAttributes } from 'react'
 import type { RouterOutputs } from '~/trpc/routers'
 import { RiAddLine, RiHome2Line } from '@remixicon/react'
 import { useTranslations } from 'next-intl'
-import { DocIcon } from '~/components/doc-icon'
 import { Button } from '~/components/ui/button'
 import { Skeleton } from '~/components/ui/skeleton'
 import { UserAvatar } from '~/components/user-avatar'
@@ -19,14 +18,6 @@ interface ChatHeaderProps extends HTMLAttributes<HTMLDivElement> {
 export function ChatHeader({ isShared, chat, className, ...props }: ChatHeaderProps) {
   const { user } = useUser()
   const t = useTranslations('views.chat')
-  const resources = chat
-    ? [...new Set(
-        [
-          ...chat.messages.map(m => m.docTypes).flat(),
-          ...chat.messages.map(m => m.sources.map(s => s.docType)).flat(),
-        ],
-      )]
-    : []
 
   return (
     <div
@@ -35,10 +26,6 @@ export function ChatHeader({ isShared, chat, className, ...props }: ChatHeaderPr
     >
       <div className="flex max-w-[calc(100%-5rem)] flex-1 items-center gap-2 lg:max-w-[calc(100%-10rem)] lg:gap-4">
         <SidebarTrigger className="-ml-2 shrink-0" />
-        {resources.map(resource => (
-          <DocIcon key={resource} name={resource} />
-        ))}
-        {!!resources.length && <div className="h-4 w-px bg-black/10 dark:bg-white/10" />}
         {chat
           ? (
               <>
