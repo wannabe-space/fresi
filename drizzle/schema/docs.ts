@@ -15,6 +15,7 @@ export const docType = pgEnum('doc_type', [
   'tanstack-query',
   'tanstack-router',
   'better-auth',
+  'aisdk',
 ])
 
 export const docs = pgTable('docs', {

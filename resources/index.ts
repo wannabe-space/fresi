@@ -1,4 +1,5 @@
 import type { docType } from '~/drizzle'
+import { aisdk } from './aisdk'
 import { betterAuth } from './better-auth'
 import { drizzleOrm } from './drizzle-orm'
 import { hono } from './hono'
@@ -39,4 +40,5 @@ export const resources: Resource[] = [
   drizzleOrm,
   prisma,
   betterAuth,
+  aisdk,
 ]
