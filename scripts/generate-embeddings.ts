@@ -1,9 +1,8 @@
 import type { DocType, Resource } from '~/resources'
 import { readFile } from 'node:fs/promises'
-import { embedMany } from 'ai'
+import { embed } from 'ai'
 import consola from 'consola'
 import { and, eq } from 'drizzle-orm'
-import { encodingForModel } from 'js-tiktoken'
 import { fromMarkdown } from 'mdast-util-from-markdown'
 import { toMarkdown } from 'mdast-util-to-markdown'
 import { u } from 'unist-builder'
@@ -58,8 +57,6 @@ async function generateAndSaveEmbeddingsForResource(
 
   logger.info(`Found ${docsPaths.length} markdown files`)
 
-  const encoding = encodingForModel('gpt-4-turbo')
-
   for (const rawPath of docsPaths) {
     const content = await readFile(rawPath, { encoding: 'utf8' })
 
@@ -95,34 +92,24 @@ async function generateAndSaveEmbeddingsForResource(
       await tx.delete(docs).where(where)
 
       for (const [index, content] of sectionsToSave.entries()) {
-        const tokens = encoding.encode(content.trim().replaceAll('\n', ' '))
-        const MAX = 8192
-        const texts = []
-
-        for (let i = 0; i < tokens.length; i += MAX) {
-          texts.push(encoding.decode(tokens.slice(i, i + MAX)))
-        }
-
-        const { embeddings } = await embedMany({
+        const { embedding } = await embed({
           model: models.embedding,
-          values: texts,
+          value: content.trim(),
         })
 
-        await tx.insert(docs).values(
-          embeddings.map(embedding => ({
-            type: resource.type,
-            path,
-            title,
-            url,
-            content,
-            embedding,
-            index,
-          })),
-        )
+        await tx.insert(docs).values({
+          type: resource.type,
+          path,
+          title,
+          url,
+          content,
+          embedding,
+          index,
+        })
 
-        logger.success(`${embeddings.length} new embedding${embeddings.length === 1 ? '' : 's'} for "${title}" with index ${index}`)
+        logger.success(`New embedding for "${title}" with index ${index}`)
 
-        totalSectionsCreated += embeddings.length
+        totalSectionsCreated += 1
       }
     })
   }
