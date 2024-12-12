@@ -5,7 +5,6 @@ export const hono: Resource = {
   type: 'hono',
   label: 'Hono',
   icon: '/resources/hono.png',
-  category: 'backend',
   site: 'https://hono.dev',
   git: 'https://github.com/honojs/website.git',
   docsPath: 'docs',

@@ -5,7 +5,6 @@ export const tailwindcss: Resource = {
   type: 'tailwindcss',
   label: 'Tailwind CSS',
   icon: '/resources/tailwindcss.svg',
-  category: 'frontend',
   site: 'https://tailwindcss.com',
   git: 'https://github.com/tailwindlabs/tailwindcss.com.git',
   docsPath: 'content',

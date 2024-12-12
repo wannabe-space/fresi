@@ -5,7 +5,6 @@ export const svelte: Resource = {
   type: 'svelte',
   label: 'Svelte',
   icon: '/resources/svelte.svg',
-  category: 'frontend',
   site: 'https://svelte.dev/',
   git: 'https://github.com/sveltejs/svelte.git',
   docsPath: 'documentation/docs',

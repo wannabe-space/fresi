@@ -5,7 +5,6 @@ export const tanstackQuery: Resource = {
   type: 'tanstack-query',
   label: 'TanStack Query',
   icon: '/resources/tanstack.svg',
-  category: 'frontend',
   site: 'https://tanstack.com',
   git: 'https://github.com/TanStack/query.git',
   docsPath: 'docs',

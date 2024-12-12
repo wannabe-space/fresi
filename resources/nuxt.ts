@@ -5,7 +5,6 @@ export const nuxt: Resource = {
   type: 'nuxt',
   label: 'Nuxt',
   icon: '/resources/nuxt.svg',
-  category: 'fullstack',
   site: 'https://nuxt.com',
   git: 'https://github.com/nuxt/nuxt.git',
   docsPath: 'docs',

@@ -23,7 +23,6 @@ export interface Resource {
   getLink: (props: { path: string, doc: string }) => string
   formatTitle: (props: { path: string, doc: string }) => string
   ignore: string[]
-  category: 'frontend' | 'backend' | 'fullstack' | 'database' | 'service'
   docsPath: string
 }
 

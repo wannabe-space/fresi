@@ -5,7 +5,6 @@ export const betterAuth: Resource = {
   type: 'better-auth',
   label: 'Better Auth',
   icon: '/resources/better-auth.svg',
-  category: 'database',
   site: 'https://better-auth.com',
   git: 'https://github.com/better-auth/better-auth.git',
   docsPath: 'docs/content/docs',

@@ -5,7 +5,6 @@ export const react: Resource = {
   type: 'react',
   label: 'React',
   icon: '/resources/react.svg',
-  category: 'frontend',
   site: 'https://react.dev',
   git: 'https://github.com/reactjs/react.dev.git',
   docsPath: 'src/content',

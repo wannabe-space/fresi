@@ -5,7 +5,6 @@ export const swiper: Resource = {
   type: 'swiper',
   label: 'Swiper',
   icon: '/resources/swiper.svg',
-  category: 'frontend',
   site: 'https://swiperjs.com/',
   git: 'https://github.com/nolimits4web/swiper-website.git',
   docsPath: 'src/pages',

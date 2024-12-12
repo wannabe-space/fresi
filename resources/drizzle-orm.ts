@@ -5,7 +5,6 @@ export const drizzleOrm: Resource = {
   type: 'drizzle-orm',
   label: 'Drizzle ORM',
   icon: '/resources/drizzle-orm.svg',
-  category: 'database',
   site: 'https://orm.drizzle.team',
   git: 'https://github.com/drizzle-team/drizzle-orm-docs.git',
   docsPath: 'src/content/docs',

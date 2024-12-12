@@ -5,7 +5,6 @@ export const next: Resource = {
   type: 'next',
   label: 'Next.js',
   icon: '/resources/next.svg',
-  category: 'fullstack',
   site: 'https://nextjs.org',
   git: 'https://github.com/vercel/next.js.git',
   docsPath: 'docs',

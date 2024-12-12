@@ -5,7 +5,6 @@ export const prisma: Resource = {
   type: 'prisma',
   label: 'Prisma',
   icon: '/resources/prisma.svg',
-  category: 'database',
   site: 'https://prisma.io',
   git: 'https://github.com/prisma/docs.git',
   docsPath: 'content',
