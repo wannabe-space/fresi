@@ -216,25 +216,25 @@ export default function Chat() {
         <ChatContainer className="pb-10">
           {!chat
             ? loadingMessages.map(message => (
-              <Fragment key={message.id}>
-                {message.role === 'user' && <ChatUser skeleton />}
-                {message.role === 'assistant' && <ChatAssistant skeleton />}
-              </Fragment>
-            ))
+                <Fragment key={message.id}>
+                  {message.role === 'user' && <ChatUser skeleton />}
+                  {message.role === 'assistant' && <ChatAssistant skeleton />}
+                </Fragment>
+              ))
             : messages.map(message => (
-              <Fragment key={message.id}>
-                {message.role === 'user' && (
-                  <ChatUser
-                    id={message.id}
-                    avatar={(
-                      <UserAvatar
-                        user={chat.user}
-                        className="size-full rounded-none"
-                      />
-                    )}
-                  >
-                    <Markdown content={message.content} />
-                    {/* {!isShared && (
+                <Fragment key={message.id}>
+                  {message.role === 'user' && (
+                    <ChatUser
+                      id={message.id}
+                      avatar={(
+                        <UserAvatar
+                          user={chat.user}
+                          className="size-full rounded-none"
+                        />
+                      )}
+                    >
+                      <Markdown content={message.content} />
+                      {/* {!isShared && (
                       <div className="mt-4 flex gap-2">
                         <Button
                           variant="outline"
@@ -246,45 +246,45 @@ export default function Chat() {
                         </Button>
                       </div>
                     )} */}
-                  </ChatUser>
-                )}
-                {message.role === 'assistant' && (
-                  <ChatAssistant id={message.id}>
-                    <Markdown content={message.content} />
-                    {!isShared && messages.at(-1)?.id === message.id && (
-                      <div className="mt-4 flex gap-2">
-                        <Button
-                          variant="outline"
-                          size="xs"
-                          onClick={() => copyToClipboard(message.content)}
-                        >
-                          <RiFileCopyLine className="size-3" />
-                          {tLabels('copy')}
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="xs"
-                          onClick={generateAgain}
-                        >
-                          <RiRefreshLine className="size-3" />
-                          {t('generate-again')}
-                        </Button>
-                      </div>
-                    )}
-                    {!!message.sources.length && (
-                      <div>
-                        <h4 className="mb-2 mt-6 text-sm text-gray-500">{t('sources')}</h4>
-                        <div className="flex gap-2 overflow-x-auto">
-                          {message.sources.map(source => (
-                            <ChatSource key={source.url} source={source} />
-                          ))}
+                    </ChatUser>
+                  )}
+                  {message.role === 'assistant' && (
+                    <ChatAssistant id={message.id}>
+                      <Markdown content={message.content} />
+                      {!isShared && messages.at(-1)?.id === message.id && (
+                        <div className="mt-4 flex gap-2">
+                          <Button
+                            variant="outline"
+                            size="xs"
+                            onClick={() => copyToClipboard(message.content)}
+                          >
+                            <RiFileCopyLine className="size-3" />
+                            {tLabels('copy')}
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="xs"
+                            onClick={generateAgain}
+                          >
+                            <RiRefreshLine className="size-3" />
+                            {t('generate-again')}
+                          </Button>
                         </div>
-                      </div>
-                    )}
-                  </ChatAssistant>
-                )}
-              </Fragment>
-            ))}
+                      )}
+                      {!!message.sources.length && (
+                        <div>
+                          <h4 className="mb-2 mt-6 text-sm text-gray-500">{t('sources')}</h4>
+                          <div className="flex gap-2 overflow-x-auto">
+                            {message.sources.map(source => (
+                              <ChatSource key={source.url} source={source} />
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </ChatAssistant>
+                  )}
+                </Fragment>
+              ))}
           {(isLoading || !!generatedText) && (
             <ChatAssistant avatarClassName="bg-transparent dark:bg-transparent animate-pulse">
               {!!generatedText && <Markdown className="mb-6" content={generatedText} animated />}
