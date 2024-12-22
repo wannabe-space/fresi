@@ -3,7 +3,7 @@ import { env } from '~/env'
 import 'server-only'
 
 export const stripe = new Stripe(env.STRIPE_SECRET_KEY, {
-  apiVersion: '2024-11-20.acacia',
+  apiVersion: '2024-12-18.acacia',
   appInfo: {
     name: 'Fresi',
     url: env.NEXT_PUBLIC_URL,
