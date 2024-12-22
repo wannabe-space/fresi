@@ -13,6 +13,7 @@ import React, { Fragment, useEffect, useRef, useState } from 'react'
 import { toast } from 'sonner'
 import { ChatAssistant, ChatContainer, ChatUser } from '~/components/chat-messages'
 import { Markdown } from '~/components/markdown'
+import { MemoizedMarkdown } from '~/components/memoized-markdown'
 import { pushModal } from '~/components/modals'
 import { Button } from '~/components/ui/button'
 import { UserAvatar } from '~/components/user-avatar'
@@ -250,7 +251,7 @@ export default function Chat() {
                   )}
                   {message.role === 'assistant' && (
                     <ChatAssistant id={message.id}>
-                      <Markdown content={message.content} />
+                      <MemoizedMarkdown content={message.content} id={message.id} />
                       {!isShared && messages.at(-1)?.id === message.id && (
                         <div className="mt-4 flex gap-2">
                           <Button
