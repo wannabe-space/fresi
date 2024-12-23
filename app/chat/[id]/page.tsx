@@ -13,7 +13,6 @@ import React, { Fragment, useEffect, useRef, useState } from 'react'
 import { toast } from 'sonner'
 import { ChatAssistant, ChatContainer, ChatUser } from '~/components/chat-messages'
 import { Markdown } from '~/components/markdown'
-import { MemoizedMarkdown } from '~/components/memoized-markdown'
 import { pushModal } from '~/components/modals'
 import { Button } from '~/components/ui/button'
 import { UserAvatar } from '~/components/user-avatar'
@@ -234,7 +233,7 @@ export default function Chat() {
                         />
                       )}
                     >
-                      <Markdown content={message.content} />
+                      <Markdown id={message.id} content={message.content} />
                       {/* {!isShared && (
                       <div className="mt-4 flex gap-2">
                         <Button
@@ -251,7 +250,7 @@ export default function Chat() {
                   )}
                   {message.role === 'assistant' && (
                     <ChatAssistant id={message.id}>
-                      <MemoizedMarkdown content={message.content} id={message.id} />
+                      <Markdown id={message.id} content={message.content} />
                       {!isShared && messages.at(-1)?.id === message.id && (
                         <div className="mt-4 flex gap-2">
                           <Button
@@ -288,7 +287,7 @@ export default function Chat() {
               ))}
           {(isLoading || !!generatedText) && (
             <ChatAssistant avatarClassName="bg-transparent dark:bg-transparent animate-pulse">
-              {!!generatedText && <Markdown className="mb-6" content={generatedText} animated />}
+              {!!generatedText && <Markdown className="mb-6" content={generatedText} />}
               {isLoading && (
                 <span className="prose flex animate-pulse items-end">
                   {t('searching')}

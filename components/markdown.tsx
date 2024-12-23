@@ -3,13 +3,15 @@
 import type { ReactElement, ReactNode } from 'react'
 import type { IOptions } from 'rehype-github-alerts'
 import { RiFileCopyLine } from '@remixicon/react'
+import { marked } from 'marked'
 import { useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { memo, useMemo, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { rehypeGithubAlerts } from 'rehype-github-alerts'
 import remarkGfm from 'remark-gfm'
 import { useCopy } from '~/hooks/use-copy'
 import { cn } from '~/lib/ui'
+
 import { CodeHighlight } from './code-highlight'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip'
 
@@ -85,15 +87,7 @@ function P({ children, className, node: _node, ...props }: React.HTMLAttributes<
   return <p className={className} {...props}>{children}</p>
 }
 
-export function Markdown({
-  className,
-  content,
-  animated: _animated,
-}: {
-  className?: string
-  content: string
-  animated?: boolean
-}) {
+function MarkdownBase({ content }: { content: string }) {
   const t = useTranslations('alerts')
   const myOptions: IOptions = {
     alerts: [
@@ -134,7 +128,6 @@ export function Markdown({
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeGithubAlerts.bind(null, myOptions)]}
-      className={cn('prose prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl dark:prose-invert block', className)}
       components={{
         pre: Pre,
         code: Code,
@@ -145,3 +138,27 @@ export function Markdown({
     />
   )
 }
+
+function parseMarkdownIntoBlocks(markdown: string) {
+  const tokens = marked.lexer(markdown)
+  return tokens.map(token => token.raw)
+}
+
+const MemoizedMarkdownBlock = memo(
+  ({ content }: { content: string }) => <MarkdownBase content={content} />,
+  (prevProps, nextProps) => prevProps.content === nextProps.content,
+)
+
+export const Markdown = memo(
+  ({ content, id, className }: { content: string, id?: string, className?: string }) => {
+    const blocks = useMemo(() => parseMarkdownIntoBlocks(content), [content])
+
+    return (
+      <div className={cn('prose prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl dark:prose-invert block', className)}>
+        {blocks.map((block, index) => (
+          <MemoizedMarkdownBlock content={block} key={id ? `${id}-block_${index}` : `block_${index}`} />
+        ))}
+      </div>
+    )
+  },
+)
