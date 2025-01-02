@@ -8,7 +8,7 @@ export async function GET(request: Request) {
     return Response.redirect(new URL('/sign-up', request.url))
   }
 
-  const { isActive } = await getSubscriptionStatus(userId)
+  const { active } = await getSubscriptionStatus(userId)
 
-  return Response.redirect(new URL(isActive ? '/chat' : '/home', request.url))
+  return Response.redirect(new URL(active ? '/chat' : '/home', request.url))
 }

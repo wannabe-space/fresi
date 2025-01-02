@@ -6,7 +6,7 @@ export const check = publicProcedure.query(async ({ ctx }) => {
     return false
   }
 
-  const { isActive } = await getSubscriptionStatus(ctx.userId)
+  const { active } = await getSubscriptionStatus(ctx.userId)
 
-  return isActive
+  return active
 })

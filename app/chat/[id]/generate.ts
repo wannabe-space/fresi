@@ -202,9 +202,9 @@ export async function generate(data: z.infer<typeof validationSchema>) {
     throw new Error('Unauthorized')
   }
 
-  const { isActive } = await getSubscriptionStatus(userId)
+  const { active } = await getSubscriptionStatus(userId)
 
-  if (!isActive) {
+  if (!active) {
     throw new Error('User has no active subscription')
   }
 
