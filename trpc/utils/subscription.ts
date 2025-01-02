@@ -7,15 +7,15 @@ export async function getSubscriptionStatus(userId: string) {
 
   if (!subscription) {
     return {
-      hasActiveSubscription: false,
-      hasSubscription: false,
+      isActive: false,
+      exists: false,
       status: null,
     }
   }
 
   return {
-    hasActiveSubscription: subscription.data.status === 'active' || subscription.data.status === 'trialing',
-    hasSubscription: subscription.data.status === 'active' || subscription.data.status === 'trialing' || subscription.data.status === 'past_due' || subscription.data.status === 'unpaid' || subscription.data.status === 'paused' || subscription.data.status === 'incomplete' || subscription.data.status === 'incomplete_expired',
+    isActive: subscription.data.status === 'active' || subscription.data.status === 'trialing',
+    exists: subscription.data.status === 'active' || subscription.data.status === 'trialing' || subscription.data.status === 'past_due' || subscription.data.status === 'unpaid' || subscription.data.status === 'paused' || subscription.data.status === 'incomplete' || subscription.data.status === 'incomplete_expired',
     status: subscription.data.status,
   }
 }

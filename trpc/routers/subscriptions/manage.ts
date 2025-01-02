@@ -17,14 +17,14 @@ export const manage = userProcedure
     type: z.enum(['monthly', 'yearly'] satisfies typeof subscriptionType.enumValues),
   }))
   .mutation(async ({ ctx, input }) => {
-    const [{ hasSubscription }, customerId] = await Promise.all([
+    const [{ exists }, customerId] = await Promise.all([
       getSubscriptionStatus(ctx.user.id),
       getStripeCustomerIdByEmail(ctx.user.primaryEmailAddress.emailAddress),
     ])
 
     let url: string | null
 
-    if (hasSubscription) {
+    if (exists) {
       if (!customerId) {
         throw new TRPCError({ code: 'NOT_FOUND', message: 'User does not have a Stripe customer ID' })
       }
