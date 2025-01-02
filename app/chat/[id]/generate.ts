@@ -12,7 +12,7 @@ import { models } from '~/lib/ai'
 import { createLogger } from '~/lib/logger'
 import { zodEnum } from '~/lib/zod'
 import { resources } from '~/resources'
-import { isSubscriptionActive } from '~/trpc/utils/subscription'
+import { getSubscriptionStatus } from '~/trpc/utils/subscription'
 
 const logger = createLogger('chat.generate')
 
@@ -202,9 +202,9 @@ export async function generate(data: z.infer<typeof validationSchema>) {
     throw new Error('Unauthorized')
   }
 
-  const isActive = await isSubscriptionActive(userId)
+  const { hasActiveSubscription } = await getSubscriptionStatus(userId)
 
-  if (!isActive) {
+  if (!hasActiveSubscription) {
     throw new Error('User has no active subscription')
   }
 

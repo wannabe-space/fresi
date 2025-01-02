@@ -1,5 +1,5 @@
 import { auth } from '@clerk/nextjs/server'
-import { isSubscriptionActive } from '~/trpc/utils/subscription'
+import { getSubscriptionStatus } from '~/trpc/utils/subscription'
 
 export async function GET(request: Request) {
   const { userId } = await auth()
@@ -8,7 +8,7 @@ export async function GET(request: Request) {
     return Response.redirect(new URL('/sign-up', request.url))
   }
 
-  const isActive = await isSubscriptionActive(userId)
+  const { hasActiveSubscription } = await getSubscriptionStatus(userId)
 
-  return Response.redirect(new URL(isActive ? '/chat' : '/home', request.url))
+  return Response.redirect(new URL(hasActiveSubscription ? '/chat' : '/home', request.url))
 }
